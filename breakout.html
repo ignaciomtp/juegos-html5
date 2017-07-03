@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+ <html>
+  <head>
+         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+         <title>Breakout</title>
+               
+        <link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
+        <link href="css/main2.css" type="text/css" rel="stylesheet" />
+        <link href="css/portada.css" type="text/css" rel="stylesheet" />
+        <link href="css/propio.css" type="text/css" rel="stylesheet" />
+    
+    
+        <link rel="shortcut icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <div class="sep">
+        
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+              <div class="container">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="index.html"><img src="img/logo-peq.png" /></a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Juegos <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="tetris.html">Tetris</a></li>
+                          <li><a href="breakout.html">Breakout</a></li>
+                          <li><a href="dots.html">Dots</a></li>
+                          
+                        </ul>
+                      </li>
+
+                  </ul>
+                  <div class="nav navbar-nav navbar-right">
+                     
+  
+                        
+                         
+                  </div>
+                </div><!--/.nav-collapse -->
+              </div>
+        </nav>
+
+                    <div class="container">
+            <div class="well3 sep text-center">
+                <div class="col-md-2">
+                    
+                    <div class="elemento-marcador" >
+                        <h4>Nivel:</h4>
+                        <div id="nivel">
+                            1
+                        </div>
+                            
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <canvas id="miCanvas" width="600" height="400"></canvas>                    
+                </div>
+                <div class="col-md-2">
+                    
+                    <div class="elemento-marcador" >
+                        <h4>Puntos:</h4>
+                        <div id="puntos">
+                            0
+                        </div>
+                    </div>                    
+                </div>                
+                
+                <div class="limpiar"></div>
+                <br />
+                <button type="button" class="btn btn-lg btn-info" id="empezar" >Empezar</button>
+            </div>
+        </div>
+
+
+
+    <!-- Modal HTML -->
+    <div id="gameover" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <h2 class="modal-title text-center">Game Over</h2>
+                </div>
+                <div class="modal-body text-center">
+                    
+                        <h3>Has Perdido :(</h3>
+                    
+
+                </div>
+                <div class="modal-footer">
+                    <center>
+                        <button type="button" class="btn btn-lg btn-info" id="otravez" >Jugar Otra Vez</button>
+                        <a href="index.html" class="btn btn-lg btn-danger">Salir</a>
+                    </center>
+
+                </div>
+            </div>
+        </div>
+    </div>          
+
+    
+
+        <!-- Modal HTML -->
+        <div id="nextlevel" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+
+                        <h2 class="modal-title text-center">Enhorabuena!</h2>
+                    </div>
+                    <div class="modal-body text-center">
+
+                        <h3>Siguiente Nivel: <span id="numnextlevel"></span></h3>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <center>
+                            <button type="button" class="btn btn-lg btn-info" id="empezar2" >Empezar</button>
+                            
+                        </center>
+
+                    </div>
+                </div>
+            </div>
+        </div>      
+
+
+        
+        <script src="js/jquery.js" type="text/javascript"></script>
+        <script src="js/bootstrap.js" type="text/javascript"></script>
+        <script src="js/breakout.js" type="text/javascript"></script>
+         
+           
+
+                  
+        <script>
+            function guardarPartida(){
+                $.ajax({
+                    url: "/guardar",
+                    data: {
+                        puntos : puntos,
+                        juego : 2
+                    },
+                    type: 'POST'
+                });            
+            }        
+
+            function gameOver(){
+                $('#gameover').modal('show');
+            }
+        </script>
+
+        <script>
+            $( document ).ready(function() {
+                $('#empezar').click(empezar);
+                $('#empezar2').click(subirNivel);
+                
+                $('#otravez').click(function(){
+                    location.reload();
+                    dibujar();
+                });
+                
+            });
+        </script>
+       
+    
+    
+    
+       
+        
+        </div>
+
+              
+
+</body>
+ </html>

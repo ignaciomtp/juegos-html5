@@ -1,0 +1,102 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12-may-2017, 11:52:04
+    Author     : usuario
+*/
+
+
+html, body {
+    background-color: #282F31;
+  
+}
+
+
+.site-wrapper{
+    
+    border-radius: 6px;
+}
+
+.jugar{
+    width:700px;
+    height: 170px;
+    margin:50px auto;
+    border-radius: 6px;
+    border:1px solid #fff;
+    
+}
+
+.jugar:hover{
+    border:1px solid #58acfa;
+}
+
+.sep-bottom{
+    margin-bottom: 50px;
+}
+
+#juego-tetris{
+    background-image: url('../img/tetris.png');
+}
+
+#juego-breakout{
+    background: url('../img/breakout.png');
+}
+
+#juego-dots{
+    background: url('../img/dots.png');
+}
+.sep{
+    margin-top: 40px;
+}
+
+.sep2{
+    margin-top: 80px;
+}
+
+.limpiar{
+    clear:both;
+}
+
+.login{
+    margin-top:10px;
+    display: inline-block;
+}
+
+.form-login{
+    margin-left:10px;
+    padding-left: 10px;
+    border-left: 1px solid #ccc;
+}
+
+.puntuaciones{
+    background-color: #ccc;
+    color:#101010;
+}
+
+.fondoblanco{
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.tab-content > .active{
+    border-left:1px solid #ddd;
+    border-right:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    
+}
+
+.perfil{
+    color:#000;
+}
+
+.container2{
+    width:80%;
+    margin:0 auto;
+}
+
+.textoblanco{
+    color:#fff;
+}
