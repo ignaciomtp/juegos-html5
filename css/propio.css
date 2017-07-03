@@ -100,3 +100,11 @@ html, body {
 .textoblanco{
     color:#fff;
 }
+
+.proximos{
+    max-width: 400px;
+    margin:10px auto;
+    background-color: #44476A;
+    border:1px solid #FFF;
+    padding-bottom: 15px;
+}
