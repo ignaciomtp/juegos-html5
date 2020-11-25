@@ -10,7 +10,7 @@ var cayendo;
 var otraPieza = 1;
 var nivel = 1;
 var jugando = 1;
-var velocidad = 200;
+var velocidad = 250;
 var numLineas = 0;
 var contNivel = 0; // Cada x líneas sube de nivel -> aumenta velocidad de caída.
 
